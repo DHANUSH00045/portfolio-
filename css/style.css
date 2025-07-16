@@ -1,0 +1,326 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0d0d0d;
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section {
+  padding: 80px 5%;
+}
+
+h1, h2, h3 {
+  color: #fff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: #0d0d0d;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(255, 79, 0, 0.2);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo span {
+  color: #ff4f00;
+}
+
+.navbar a { /* Changed from .nav a to .navbar a */
+  margin: 0 15px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+  text-decoration: none; /* Added to remove default underline */
+}
+
+.navbar a::after { /* Changed from .nav a::after to .navbar a::after */
+  content: '';
+  display: block;
+  height: 2px;
+  background: #ff4f00;
+  width: 0%;
+  transition: 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.navbar a:hover::after { /* Changed from .nav a:hover::after to .navbar a:hover::after */
+  width: 100%;
+}
+
+/* Hamburger Menu Default Hidden on Large Screens */
+.menu-toggle {
+  display: none; /* Hidden by default on large screens */
+  font-size: 28px;
+  color: #ff4f00;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Responsive Nav Styles */
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Hidden by default on small screens */
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Adjust based on your header height */
+    left: 0;
+    width: 100%;
+    background: #0d0d0d;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+
+  .navbar.active {
+    display: flex; /* Shown when active class is added by JS */
+  }
+
+  .navbar a {
+    padding: 15px 0;
+    border-top: 1px solid #222;
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: block; /* Shown on small screens */
+  }
+}
+
+.button {
+  background: #ff4f00;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none; /* Added to remove default underline */
+}
+
+.button:hover {
+  background: #ff2a00;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+}
+
+.hero img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ff4f00;
+  box-shadow: 0 0 30px 10px rgba(255, 79, 0, 0.8);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.hero h1 span {
+  color: #ff4f00;
+}
+
+.hero h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #ccc;
+}
+
+.btns .button {
+  margin: 10px;
+}
+
+/* Social Icons */
+.socials {
+  margin-top: 20px;
+}
+
+.socials img {
+  width: 30px;
+  margin: 0 10px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+/* About Section */
+.about h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ccc;
+}
+
+/* Service Section */
+.services h2,
+.projects h2,
+.about h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.service-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #1a1a1a;
+  border: 1px solid #ff4f00;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 79, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  color: #ff4f00;
+}
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #1a1a1a;
+  border: 1px solid #ff4f00;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 79, 0, 0.3);
+}
+
+.project-card h3 {
+  color: #ff4f00;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* Certificates & Achievements */
+ul {
+  list-style: none;
+  padding-left: 0;
+  color: #ccc;
+  text-align: center;
+}
+
+ul li::before {
+  content: "★ ";
+  color: #ff4f00;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #777;
+  border-top: 1px solid #222;
+  margin-top: 40px;
+}
+/* Contact Section */
+.contact-section {
+  padding: 80px 5%;
+  text-align: center;
+  background: #1a1a1a;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 0 20px rgba(255, 79, 0, 0.2);
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #ff4f00;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-item {
+  background: #0d0d0d;
+  padding: 15px 20px;
+  border: 1px solid #ff4f00;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  color: #ccc;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.contact-item a {
+  color: #ff4f00;
+  font-weight: 600;
+}
+
+.contact-item:hover {
+  background: #111;
+}
