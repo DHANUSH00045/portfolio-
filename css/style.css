@@ -264,6 +264,7 @@ ul {
   padding-left: 0;
   color: #ccc;
   text-align: center;
+  border: 1px solid #ff4f00;
 }
 
 ul li::before {
@@ -323,4 +324,17 @@ footer {
 
 .contact-item:hover {
   background: #111;
+}
+
+.achievements h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.achievements p {
+  list-style: none;
+  padding-left: 0;
+  color: #ccc;
+  text-align: center;
+  border: 1px solid #ff4f00;
 }

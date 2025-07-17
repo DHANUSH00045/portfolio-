@@ -1,8 +1,13 @@
-// Select the hamburger menu and the navbar
 const menuToggle = document.querySelector('.menu-toggle');
 const navbar = document.querySelector('.navbar');
 
-// Add a click event to toggle the 'active' class
 menuToggle.addEventListener('click', () => {
   navbar.classList.toggle('active');
+});
+
+// Optional: Close menu when a link is clicked (for better UX)
+document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', () => {
+    navbar.classList.remove('active');
+  });
 });
