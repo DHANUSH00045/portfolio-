@@ -68,7 +68,29 @@ h1, h2, h3 {
   bottom: -5px;
   left: 0;
 }
+.navbar {
+  display: flex;
+  gap: 30px; /* Adds space between navbar items */
+}
 
+.navbar a {
+  color: white;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #ff4f00;
+  color: #000;
+}
+
+.navbar .button {
+  /* Removed special Contact styling */
+  background: none;
+  color: white;
+}
 .navbar a:hover::after { /* Changed from .nav a:hover::after to .navbar a:hover::after */
   width: 100%;
 }
@@ -184,16 +206,31 @@ h1, h2, h3 {
 }
 
 /* About Section */
-.about h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.about {
+  background: #111;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 30px 20px;
 }
 
-.about p {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  color: #ccc;
+.service-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.service-card {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.service-card:hover {
+  background: #262626;
+  transform: translateY(-4px);
 }
 
 /* Service Section */
