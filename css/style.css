@@ -301,12 +301,12 @@ ul {
   padding-left: 0;
   color: #ccc;
   text-align: center;
-  border: 1px solid #ff4f00;
+  border: 1px solid #000000;
 }
 
 ul li::before {
   content: "★ ";
-  color: #ff4f00;
+  color: #f50000;
 }
 
 /* Footer */
@@ -373,5 +373,5 @@ footer {
   padding-left: 0;
   color: #ccc;
   text-align: center;
-  border: 1px solid #ff4f00;
+  border: 1px solid #000000;
 }
